@@ -1,16 +1,16 @@
 {% set name = "python-geohash" %}
-{% set version = "0.8.5" %}
+{% set version = "0.9.2" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "05a21fcf4eda1a5eddbd291890ade23fc5ddaa6bb98f2ee23d2d384ed14f086d"
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz"
+  sha256: "dd2da7eb381e0cd40cd2111590417b4f41e552c29167ac9b04d7523fdf3d21e4"
 
 build:
-  number: 7
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
